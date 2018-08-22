@@ -1,5 +1,15 @@
 {
-  "devDependencies": {
+  "name": "changeNginx",
+  "version": "1.0.0",
+  "description": "",
+  "main": "changeNginx.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "home-dir": "^1.0.0",
     "inquirer": "^6.1.0"
   }
 }
