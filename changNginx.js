@@ -5,20 +5,17 @@ var nginxPath = require(homedir('/nginxConf'))
 
 var nginxConf = ''
 var defaultArr = []
-var noDefaultArr = []
 var choicesArr = []
 
 nginxConf = fs.readFileSync(nginxPath.path, 'utf8');
-var regex3 = /include.*;/gm;
-var nginxConfArr = nginxConf.match(regex3)
+var regex = /include.*;/gm;
+var nginxConfArr = nginxConf.match(regex)
 
 
 for (let i = 0; i < nginxConfArr.length; i++) {
 	var start = nginxConf.indexOf(nginxConfArr[i])
-	var end = start + nginxConfArr[i].length
-	// console.log(end)
 	var tag = nginxConf.substring(start - 1, start)
-	tag !== '#' ? defaultArr.push(nginxConfArr[i]) : noDefaultArr.push(nginxConfArr[i])
+	tag !== '#' ? defaultArr.push(nginxConfArr[i]) : ''
 	choicesArr.push({name:nginxConfArr[i],value:nginxConfArr[i]})
 }
 
