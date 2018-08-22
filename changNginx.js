@@ -1,13 +1,14 @@
 var fs = require('fs')
-
-var inquirer = require('inquirer');
+var inquirer = require('inquirer')
+var homedir = require('home-dir')
+var nginxPath = require(homedir('/nginxConf'))
 
 var nginxConf = ''
 var defaultArr = []
 var noDefaultArr = []
 var choicesArr = []
 
-nginxConf = fs.readFileSync('/usr/local/etc/nginx/nginx.conf', 'utf8');
+nginxConf = fs.readFileSync(nginxPath.path, 'utf8');
 var regex3 = /include.*;/gm;
 var nginxConfArr = nginxConf.match(regex3)
 
@@ -41,5 +42,6 @@ inquirer
   		}
   	})
   	.then(() => {
-  		fs.writeFileSync('/usr/local/etc/nginx/nginx.conf', nginxConf);
+  		fs.writeFileSync(nginxPath.path, nginxConf)
+      console.log('切换成功')
   	})
