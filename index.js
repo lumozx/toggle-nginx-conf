@@ -1,3 +1,5 @@
+#!/usr/bin/env node 
+"use strict"
 var fs = require('fs')
 var inquirer = require('inquirer')
 var homedir = require('home-dir')
