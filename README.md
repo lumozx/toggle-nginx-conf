@@ -3,6 +3,11 @@
 由于开发环境依赖dev1，因此就要监听80端口，但项目一多，nginx.conf的监听80端口变得臃肿且复杂
 此项目由此而来
 
+#### 安装
+```
+npm install toggle-nginx-conf -g
+```
+
 #### 在home目录下新建`/nginxConf/index.js`文件，模板如下：
 ```
 module.exports = {
@@ -23,10 +28,10 @@ server {
 每个include都是一个项目配置
 
 
-### 运行命令
+#### 运行命令
 
 ```
-node changNginx.js
+tnc
 ```
 
 执行成功后，会以选单的方式，显示所有include的路径。

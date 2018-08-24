@@ -1,8 +1,11 @@
 {
-  "name": "changeNginx",
-  "version": "1.0.1",
-  "description": "",
-  "main": "changeNginx.js",
+  "name": "toggle-nginx-conf",
+  "version": "0.0.3",
+  "description": "More easily toggle the Nginx.conf tool",
+  "main": "index.js",
+  "bin": {
+    "tnc": "./index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
